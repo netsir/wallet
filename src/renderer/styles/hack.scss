@@ -1,0 +1,22 @@
+// hack code mirror style
+.CodeMirror {
+  height: 380px !important;
+}
+
+.el-message-box {
+  .delConfirmBtn {
+    background: #f68d27;
+    border-color: #f68d27;
+    &:focus {
+      background: #ffa829;
+      border-color: #ffa829;
+    }
+    &:hover {
+      background: #ffa829;
+      border-color: #ffa829;
+    }
+  }
+  .el-message-box__status.el-icon-warning {
+    color: #f56c6c !important;
+  }
+}

@@ -1,0 +1,21 @@
+@import "./vars";
+@import "./mixins";
+
+.btnThemeColor {
+  background-color: #f68d27 !important;
+  color: #fff !important;
+  border: none;
+  &:hover {
+    opacity: 0.8;
+  }
+  &:active {
+    opacity: 1;
+  }
+}
+
+.el-message {
+  min-width: 300px;
+  .el-message__content {
+    word-break: break-all;
+  }
+}

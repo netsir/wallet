@@ -1,0 +1,44 @@
+@mixin size($size...) {
+  $size: if(length($size) > 0, $size, auto);
+  $width: nth($size, 1);
+  $height: nth($size, length($size));
+  @if $width != auto {
+    $width: if(unitless($width), $width + px, $width);
+  }
+  @if $height!= auto {
+    $height: if(unitless($height), $height + px, $height);
+  }
+
+  width: $width;
+  height: $height;
+}
+
+@mixin btn($width, $height, $bgColor, $fontColor, $borderRadius: 4px) {
+  @include size($width, $height);
+  background-color: $bgColor;
+  color: $fontColor;
+  border-radius: $borderRadius;
+  text-align: center;
+  line-height: $height;
+  cursor: pointer;
+}
+
+@mixin circle($size, $isHidden: true) {
+  @include size($size);
+  display: inline-block;
+  border-radius: 50%;
+  @if $isHidden == true {
+    overflow: hidden;
+  }
+}
+
+@mixin center-block {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

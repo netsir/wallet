@@ -1,0 +1,11 @@
+.sliderDown-enter-active,
+.sliderDown-leave-active {
+  transition: 0.3s;
+  height: 100px;
+}
+
+.sliderDown-enter,
+.sliderDown-leave-to {
+  overflow: hidden;
+  height: 0;
+}
