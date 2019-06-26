@@ -10,22 +10,23 @@
           </div>
         </el-col>
         <el-col :span="18">
-          <el-row>
+          <el-row v-if="!rankLoading">
             <el-col :span="24" class="flexBox">
               <div class="campaignInfo" v-if="rank.Ranking !== 0">
-                <p>{{$t('proposal.curRank')+':'+rank.Ranking}}</p>
-                <p>{{$t('proposal.margin')+':'}}{{rank.Margin| toNts}} NTS</p>
+                <p>{{$t('proposal.curRank') + ':' + rank.Ranking}}</p>
+                <p>{{$t('proposal.margin') + ':'}} {{ rank.Margin | toNts }} NTS</p>
               </div>
-              <div v-if="operationStatus==='markup'">
+              <div v-if="operationStatus === 'markup'">
                 <router-link :to="`/sendCampaign/${proposalInfo.type}/${proposalHash}`">
-                  <el-button  class="btnThemeColor addMargin">{{$t('proposal.addMargin')}}</el-button>
+                  <el-button class="btnThemeColor addMargin">{{ $t('proposal.addMargin') }}</el-button>
                 </router-link>
               </div>
             </el-col>
             <el-col :offset="22" :span="2">
-              <div class="flexBtn" v-if="rank.Ranking === 0 && proposalInfo.status === 'apply'">
+              <div class="flexBtn"
+                   v-if="operationStatus !== 'markup' && rank.Ranking === 0 && proposalInfo.status === 'apply'">
                 <router-link :to="`/sendCampaign/${proposalInfo.type}/${proposalHash}`">
-                  <el-button  class="btnThemeColor applyBtn">{{$t('account.apply')}}</el-button>
+                  <el-button class="btnThemeColor applyBtn">{{ $t('account.apply') }}</el-button>
                 </router-link>
               </div>
             </el-col>
@@ -41,7 +42,7 @@
         </el-pagination>
       </div>
       <div class="btnContainer">
-        <el-button v-if="operationStatus==='finalize'"  type="primary" @click="finalizeSend"
+        <el-button v-if="operationStatus==='finalize'" type="primary" @click="finalizeSend"
         >{{$t('proposal.finalize')}}
         </el-button>
       </div>
@@ -96,6 +97,8 @@ export default {
       // 交易记录列表
       txList: [],
       proposalInfo: {},
+
+      rankLoading: true,
       rank: {
         Margin: 0,
         Ranking: 0
@@ -201,6 +204,7 @@ export default {
         this.curAccount.address
       );
       if (code === api.SUCCESS) {
+        this.rankLoading = false
         this.rank = result;
       } else {
         console.error(`${code}: ${result}`);
@@ -213,12 +217,13 @@ export default {
         this.pageSize
       );
       if (code === api.SUCCESS) {
-        this.txList = result.list.map((i, idx) => {
-          return {
-            idx: idx + (this.curPage - 1) * this.pageSize + 1,
-            ...i
-          }
-        }) || [];
+        this.txList =
+          result.list.map((i, idx) => {
+            return {
+              idx: idx + (this.curPage - 1) * this.pageSize + 1,
+              ...i
+            };
+          }) || [];
         this.total = result.sum || 0;
       } else {
         console.error(`${code}: ${result}`);
@@ -267,17 +272,21 @@ export default {
   display: flex;
   justify-content: space-between;
 }
+
 .flexBtn {
   display: flex;
   flex-direction: row-reverse;
 }
+
 .applyBtnBox {
   display: flex;
   flex-direction: row-reverse;
 }
+
 .addMargin {
   padding: 10px 40px;
 }
+
 .applyBtn {
   padding: 10px 40px;
 }
