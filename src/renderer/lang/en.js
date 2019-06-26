@@ -426,7 +426,7 @@ module.exports = {
     passed: "Approved",
     failed: "Reject",
     expired: "Outdated",
-    pending_judge: "Wait",
+    pending_judge: "Wait For Judged",
     apply: "In the application",
     ucWitnessCap: "Total Number Of Witnesses Of The Whole Network",
     ucWitnesses: "The Number Of User Chain Witness",
