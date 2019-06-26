@@ -272,7 +272,7 @@ export default {
         Message({
           type: "error",
           duration: 4000,
-          message: this.witnessList.length === 0 ? i18n.t("account.applyWitnessFail") : i18n.t("account.changeWitnessFail") + ": " + `${result}`
+          message: (this.witnessList.length === 0 ? i18n.t("account.applyWitnessFail") : i18n.t("account.changeWitnessFail")) + ": " + `${result}`
         });
         dialog.stopLoading();
       }
