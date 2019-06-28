@@ -241,7 +241,7 @@ export default {
       timerStatus = setTimeout(() => {
         this.getOperationStatus();
         this.setTimerBtnStatus();
-      }, 500);
+      }, 5000);
     }
   },
   mounted() {
