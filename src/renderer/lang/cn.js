@@ -560,10 +560,10 @@ module.exports = {
       "選擇你要導入的賬戶文件"
     ],
     help: ["帮助", "Help", "L'aide", "幫助"],
-    useHelp: ["使用帮助", "Use the help", "Utilisez l'aide", "使用幫助"],
+    useHelp: ["使用帮助", "Help", "Utilisez l'aide", "使用幫助"],
     issue: [
       "反馈问题",
-      "Feedback problem",
+      "Report an issue",
       "Problème de rétroaction",
       "反饋問題"
     ]
