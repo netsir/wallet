@@ -522,5 +522,92 @@ module.exports = {
     bitsLess: "Token decimal digits cannot exceed 32 digits",
     changeSuccess: "Change Successfully",
     symbolLength: "Symbol length cannot exceed 10 bits"
+  },
+  // 错误信息类----来自后端
+  errorInfo: {
+    "could not decrypt key with given passphrase": [
+      "密码输入错误",
+      "Could not decrypt key with given passphrase",
+      "N'a pas pu décrypter clé avec comme mot de passe",
+      "密碼輸入錯誤"
+    ],
+    "chain missing witness": [
+      "用户链缺少见证人",
+      "Chain missing witness",
+      "Chain témoin disparu",
+      "用戶鏈缺少見證人"
+    ],
+    "oversized data": [
+      "交易数据超过限制",
+      "Transaction data exceed limits",
+      "Les données de transaction dépasse la limite",
+      "交易數據超過限制"
+    ],
+    "intrinsic gas too low": [
+      "初始gas值太低",
+      "Intrinsic gas too low",
+      "Gaz intrinsèque trop faible",
+      "初始gas值太低"
+    ],
+    "estimate gas failed": [
+      "gas预估失败",
+      "Estimate gas failed",
+      "Le gaz n'a pas estimé",
+      "gas預估失敗"
+    ],
+    "current config value with you setting value is same": [
+      "当前配置参数值已存在",
+      "Current config value with your setting value is same.",
+      "La configuration actuelle de valeurs de paramètres existants.",
+      "當前配置參數值已存在"
+    ],
+    "user witness ceiling must be a multiple of 11": [
+      "用户见证上限必须是11的倍数",
+      "User witness ceiling must be a multiple of 11",
+      "Utilisateur témoin plafond doit être un multiple de 11",
+      "用戶見證上限必須是11的倍數"
+    ],
+    "the caller have not coin": [
+      "账户权重不足",
+      "The caller have not coin",
+      "Les comptes sont insuffisants",
+      "賬戶權重不足"
+    ],
+    "there is already same proposal, can't create": [
+      "有同类交易在进行中",
+      "There already had the same proposal,can't be created.",
+      "Il y a de transactions en cours",
+      "有同類交易在進行中"
+    ],
+    "the Proposal to finalize": [
+      "已经到达定案阶段",
+      "the Proposal to finalize",
+      "Il y a eu un vote",
+      "已經到達定案階段"
+    ],
+    "evm: execution reverted": [
+      "合约执行失败",
+      "Failure of contract execution",
+      "Le contrat a échoué",
+      "合約執行失敗"
+    ],
+    "pow computing, can't again": [
+      "Pow计算中,不能再次发送",
+      "Pow Computing, cannot send again.",
+      "On ne peut pas envoyer de nouveau dans le calcul.",
+      "Pow計算中,不能再次發送"
+    ],
+    "account already exists": [
+      "账户已存在",
+      "account can't be contract account",
+      "Le compte existe.",
+      "賬戶已存在"
+    ],
+    "tx's sender or receiver does not have witness,then disable push tx": [
+      "该交易发送方或者接收方无见证人，不允许发送交易。",
+      "The sender or receiver of the transaction is not allowed to send the transaction without a witness.",
+      "L'expéditeur ou le destinataire de la transaction n'a pas de témoin et n'est pas autorisé à envoyer des transactions.",
+      "該交易發送方或者接收方無見證人，不允許發送交易。"
+    ]
   }
 };

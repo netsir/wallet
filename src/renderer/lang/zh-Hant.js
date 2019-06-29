@@ -638,6 +638,12 @@ module.exports = {
       "account can't be contract account",
       "Le compte existe.",
       "賬戶已存在"
+    ],
+    "tx's sender or receiver does not have witness,then disable push tx": [
+      "该交易发送方或者接收方无见证人，不允许发送交易。",
+      "The sender or receiver of the transaction is not allowed to send the transaction without a witness.",
+      "L'expéditeur ou le destinataire de la transaction n'a pas de témoin et n'est pas autorisé à envoyer des transactions.",
+      "該交易發送方或者接收方無見證人，不允許發送交易。"
     ]
   }
 };

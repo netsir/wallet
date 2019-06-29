@@ -4,7 +4,7 @@ import Setting from "../modules/setting";
 const web3 = new Web3(Setting.ipcPath, net);
 
 const lang = require("../renderer/lang/cn");
-const errorInfo = { "zh-CN": 0, en: 1, fr: 2 };
+const errorInfo = { "zh-CN": 0, en: 1, fr: 2, "zh-TW": 3 };
 let i = 1;
 export const SUCCESS = 0;
 export const ERROR = -1;

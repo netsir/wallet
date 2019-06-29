@@ -11,6 +11,7 @@ import ElementLocale from "element-ui/lib/locale";
 import enLocale from "element-ui/lib/locale/lang/en";
 import zhLocale from "element-ui/lib/locale/lang/zh-CN";
 import frLocale from "element-ui/lib/locale/lang/fr";
+import twLocale from "element-ui/lib/locale/lang/zh-TW";
 
 Vue.use(VueI18n);
 const messages = {
@@ -28,7 +29,7 @@ const messages = {
   },
   "zh-TW": {
     ...cnHant,
-    ...zhLocale
+    ...twLocale
   }
 };
 
