@@ -74,15 +74,15 @@ class Setting {
     } else if (process.env.TARGET_MODE === "testnet") {
       cfg = {
         testnet: "",
-        ['txpool.disableTxSetup']: true
-        // 调试
         // verbosity: 4,
-        // rpc: "",
-        // rpcaddr: "0.0.0.0",
-        // rpcapi: '"*"',
-        // pprof: "",
-        // pprofaddr: "0.0.0.0",
-        // logdir: Setting.logFilePath,
+        // 调试
+        rpc: "",
+        rpcaddr: "0.0.0.0",
+        rpcapi: '"*"',
+        pprof: "",
+        pprofaddr: "0.0.0.0",
+        logdir: Setting.logFilePath,
+        ['txpool.disableTxSetup']: true
       };
     }
     if (platform === "win32") {

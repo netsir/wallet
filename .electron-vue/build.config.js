@@ -25,10 +25,12 @@ module.exports = {
   appCopyright:'Copyright (C) 2019 Nerthus',
   // 额外的资源
   extraResource: [
-    path.join(__dirname, "../cnts/cnts"),
-    // path.join(__dirname, "../cnts/cnts.exe"),
+    process.env.BUILD_TARGET === 'win32' ?
+      path.join(__dirname, "../cnts/cnts.exe") :
+      path.join(__dirname, "../cnts/cnts")
+    ,
     path.join(
       __dirname,
-      "../cnts/core." + process.env.TARGET_MODE + ".yaml")
+      "../cnts/cnts." + process.env.TARGET_MODE + ".yaml")
   ]
 }
