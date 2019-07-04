@@ -29,7 +29,11 @@ function createWindow() {
   initWindow = createInitWindow();
   initWindow.on("close", () => !initFlag && app.quit());
   ipcMain.on("getLanguage", () => {
-    initWindow.webContents.send("language", app.getLocale());
+    let locale = app.getLocale();
+    if(locale != 'en' && locale != 'zh' && locale != 'zh-CN' && locale != 'fr' && locale != 'zh-TW') {
+      locale = 'en'
+    }
+    initWindow.webContents.send("language", locale);
   });
   ipcMain.on("startApp", () => {
     initFlag = true;
